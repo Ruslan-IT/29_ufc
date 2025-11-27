@@ -1,0 +1,197 @@
+.btn.btn-toggle {
+    margin-left: 0;
+    margin-right: 0;
+}
+.btn-toggle:after,
+.btn-toggle:before {
+    content: '';
+}
+
+.file-image-button input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-image-button .file-image-button-image {
+    max-width: 170px;
+    max-height: 250px;
+
+}
+.file-image-button .file-image-button-image img {
+    width: 100%;
+    max-height: 250px;
+}
+
+.form-group.has-error .help-block {
+    display: block;
+}
+.form-group label {
+    display: block;
+}
+
+.event-price-map {
+    background: #f7f7f7;
+    padding: 20px;
+    height: 600px;
+    position: relative;
+    padding-top: 45px;
+}
+.event-price-map.loading:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: opacity .3s,z-index 0s 0s;
+}
+.event-price-map.loading:after {
+    content: '';
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 1000;
+    transition: opacity .3s,z-index 0s 0s;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    animation: spinner-loading 2s linear infinite;
+}
+@keyframes spinner-loading {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+.event-price-map .map-buttons {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.event-price-map.place-mode .map-buttons {
+    display: block;
+}
+.event-price-map h2 {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    top: 5px;
+    left: 0;
+    color: #5a5a5a;
+}
+.event-price-map.place-mode h2.event-price-map-mode-sector,
+.event-price-map:not(.place-mode) h2.event-price-map-mode-place {
+    display: none;
+}
+.event-price-map:not(.place-mode) h2.event-price-map-mode-sector,
+.event-price-map.place-mode h2.event-price-map-mode-place {
+    display: block;
+}
+.event-price-map svg {
+    width: 100%;
+    height: 100%;
+}
+.event-price-map svg .sh-sector .sh-path {
+    pointer-events: all;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    fill: #bdbdbd;
+    stroke: #f7f7f7;
+    stroke-width: 10px;
+}
+.event-price-map svg .sh-sector.active .sh-path {
+    fill: #49bceb;
+}
+.event-price-map.place-mode svg .sh-sector .sh-path {
+    display: none;
+}
+.event-price-map:not(.place-mode) svg .sh-sector .sh-path:hover {
+    fill: #1eee8a;
+    cursor: pointer;
+}
+.event-price-map svg .sh-actived-places .pa {
+    cursor: pointer;
+    fill: #fb9678;
+    stroke: #fb9678;
+    stroke-width: 3px;
+}
+.event-price-map svg .sh-actived-places .pa:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: red;
+}
+.event-price-map svg .sh-actived-places .pa.sale {
+    fill: #1eee8a;
+    stroke: #1eee8a;
+}
+.event-price-map svg .sh-actived-places .pa.price {
+    stroke: #a69bff;
+}
+.event-price-map svg .sh-actived-places .pa.active {
+    fill: #444;
+}
+.event-price-map svg .sh-actived-places .pa.sold {
+    stroke: #000;
+}
+.event-price-map svg .sh-actived-places .pz {
+    fill: #1794ff;
+}
+.event-price-map .event-price-map-set-price {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.event-price-map .event-price-map-set-price.show {
+    display: flex;
+}
+.event-price-map .event-price-map-set-price .inner {
+    max-width: 400px;
+}
+.event-price-map .event-price-map-set-price .inner p {
+    font-size: 32px;
+    color: #dedede;
+    margin-bottom: 50px;
+}
+.event-price-map .event-price-map-set-price .inner .form-group {
+    position: relative;
+    margin-bottom: 50px;
+}
+.event-price-map .event-price-map-set-price .inner .form-group:after {
+    content: '₽';
+    position: absolute;
+    top: -13px;
+    right: 18px;
+    z-index: 1000;
+    font-size: 72px;
+    color: #b3b3b3;
+}
+.event-price-map .event-price-map-set-price .inner input {
+    font-size: 48px;
+    height: auto;
+    text-align: right;
+    padding-right: 80px;
+}
+.event-price-map .event-price-map-set-price .inner .event-price-map-set-price-buttons button:not(:last-child) {
+    margin-right: 15px;
+}
